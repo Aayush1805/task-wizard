@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Todo from './Todo';
 
 export default function TodoComponent({ todos, delTodo }) {
@@ -10,5 +11,13 @@ export default function TodoComponent({ todos, delTodo }) {
   );
 }
 
-
+TodoComponent.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  delTodo: PropTypes.func.isRequired,
+};
 

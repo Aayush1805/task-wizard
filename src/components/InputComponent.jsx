@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function InputComponent({ inpVal, handleChange, addTodo }) {
   return (
     <div className="input-container">
@@ -21,5 +23,12 @@ export default function InputComponent({ inpVal, handleChange, addTodo }) {
 }
 
 
-
-
+InputComponent.propTypes = {
+  inpVal: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }).isRequired,
+    handleChange: PropTypes.func.isRequired,
+    addTodo: PropTypes.func.isRequired
+  
+}

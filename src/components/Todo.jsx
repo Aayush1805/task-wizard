@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Todo({ todo, index, delTodo }) {
   return (
     <div className="todo">
@@ -14,5 +16,14 @@ export default function Todo({ todo, index, delTodo }) {
   );
 }
 
+
+Todo.propTypes = {
+  todo : PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }).isRequired,
+  index: PropTypes.number.isRequired,
+  delTodo: PropTypes.func.isRequired
+}
 
 
